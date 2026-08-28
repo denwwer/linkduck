@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #0077b6;
+  --color-brand-soft: #0077b61a;
+}
+
+/* The brand blue keeps enough contrast on a dark surface, so only the tint
+   behind it is lifted. `@theme` writes these to `:root`; this block follows it
+   and wins. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-brand-soft: #0077b62e;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": {
+    "message": "LinkDuck - clean YouTube links & redirects"
+  },
+  "description": {
+    "message": "Unwraps YouTube redirect and sponsored links to the real destination without URL trackers."
+  },
+  "settings_title": {
+    "message": "settings"
+  },
+  "allowlist_title": {
+    "message": "Allow list"
+  },
+  "allowlist_desc": {
+    "message": "Links to these domains stay unchanged. This is useful for sites that need their parameters to work, like some ad networks. Subdomains are included, so $1 also covers $2."
+  },
+  "allowlist_remove": {
+    "message": "Remove"
+  },
+  "allow_empty": {
+    "message": "No domains added yet. All links are cleaned."
+  },
+  "tracker_title": {
+    "message": "Trackers removed"
+  },
+  "tracker_24h": {
+    "message": " Last 24 hours"
+  },
+  "tracker_all": {
+    "message": "All time"
+  },
+  "error_not_domain": {
+    "message": "That doesn't look like a valid domain."
+  }
+}

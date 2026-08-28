@@ -1,0 +1,35 @@
+{
+  "name": {
+    "message": "LinkDuck - pulisci link YouTube e reindirizzamenti"
+  },
+  "description": {
+    "message": "Rimuove i reindirizzamenti di YouTube e i link sponsorizzati per mostrare la destinazione reale senza tracker URL."
+  },
+  "settings_title": {
+    "message": "Impostazioni"
+  },
+  "allowlist_title": {
+    "message": "Lista consentiti"
+  },
+  "allowlist_desc": {
+    "message": "I link a questi domini rimangono invariati. È utile per i siti che richiedono i propri parametri, come alcune reti pubblicitarie. I sottodomini sono inclusi, quindi $1 include anche $2."
+  },
+  "allowlist_remove": {
+    "message": "Rimuovi"
+  },
+  "allow_empty": {
+    "message": "Nessun dominio aggiunto. Tutti i link vengono puliti."
+  },
+  "tracker_title": {
+    "message": "Tracker rimossi"
+  },
+  "tracker_24h": {
+    "message": " Ultime 24 ore"
+  },
+  "tracker_all": {
+    "message": "Da sempre"
+  },
+  "error_not_domain": {
+    "message": "Non sembra essere un dominio valido."
+  }
+}

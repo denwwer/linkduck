@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <title>LinkDuck</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body
+    class="w-80 bg-white font-sans text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 cursor-default"
+  >
+    <div class="p-5">
+      <div class="flex items-center gap-2">
+        <span class="size-2.5 rounded-full bg-brand"></span>
+        <h1 id="tracker-title" class="text-sm font-semibold tracking-tight"></h1>
+
+        <button
+          id="settings"
+          type="button"
+          title="Settings"
+          aria-label="Settings"
+          class="-m-1 ml-auto rounded-lg p-1 text-zinc-400 hover:text-brand dark:text-zinc-500 dark:hover:text-brand cursor-pointer"
+        >
+          <svg
+            class="size-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mt-4 grid grid-cols-2 gap-3">
+        <div class="rounded-xl bg-brand-soft p-3">
+          <div
+            id="today"
+            class="text-2xl font-semibold tabular-nums text-brand"
+          >
+            &mdash;
+          </div>
+          <div id="tracker-24h" class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"></div>
+        </div>
+
+        <div class="rounded-xl border border-zinc-200 p-3 dark:border-zinc-700">
+          <div id="total" class="text-2xl font-semibold tabular-nums">
+            &mdash;
+          </div>
+          <div id="tracker-all" class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

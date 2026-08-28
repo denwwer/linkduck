@@ -1,0 +1,35 @@
+{
+  "name": {
+    "message": "LinkDuck - limpia enlaces de YouTube y redirecciones"
+  },
+  "description": {
+    "message": "Deshace redirecciones de YouTube y enlaces patrocinados para mostrar el destino real sin rastreadores de URL."
+  },
+  "settings_title": {
+    "message": "Configuración"
+  },
+  "allowlist_title": {
+    "message": "Lista de permitidos"
+  },
+  "allowlist_desc": {
+    "message": "Los enlaces a estos dominios no se modifican. Es útil para sitios que necesitan sus parámetros, como algunas redes publicitarias. Se incluyen los subdominios, por lo que $1 también incluye $2."
+  },
+  "allowlist_remove": {
+    "message": "Eliminar"
+  },
+  "allow_empty": {
+    "message": "Aún no se han añadido dominios. Todos los enlaces se limpian."
+  },
+  "tracker_title": {
+    "message": "Rastreadores eliminados"
+  },
+  "tracker_24h": {
+    "message": " Últimas 24 horas"
+  },
+  "tracker_all": {
+    "message": "Todo el tiempo"
+  },
+  "error_not_domain": {
+    "message": "Eso no parece un dominio válido."
+  }
+}

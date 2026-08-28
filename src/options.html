@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>LinkDuck settings</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body
+    class="bg-zinc-50 font-sans text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100"
+  >
+    <main class="mx-auto max-w-xl px-6 py-10">
+      <div class="flex items-center gap-2">
+        <span class="size-2.5 rounded-full bg-brand"></span>
+        <h1 class="text-base font-semibold tracking-tight">LinkDuck <span id="settings-title"></span></h1>
+      </div>
+
+      <section
+        class="mt-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-800"
+      >
+        <h2 id="allowlist-title" class="text-sm font-semibold tracking-tight"></h2>
+        <p id="allowlist-desc" class="mt-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 min-h-16"></p>
+
+        <form id="allow-form" class="mt-4 flex gap-2">
+          <input
+            id="allow-input"
+            type="text"
+            inputmode="url"
+            autocomplete="off"
+            placeholder="example.com"
+            aria-label="Domain to leave alone"
+            class="min-w-0 flex-1 rounded-lg border border-zinc-200 px-3 py-2 text-sm outline-none placeholder:text-zinc-400 focus:border-brand dark:border-zinc-600 dark:bg-zinc-900 dark:placeholder:text-zinc-500"
+          />
+          <button
+            type="submit"
+            class="shrink-0 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:opacity-90 cursor-pointer"
+          >
+            &#43;
+          </button>
+        </form>
+
+        <p
+          id="allow-error"
+          class="mt-2 hidden text-xs text-red-600 dark:text-red-400"
+        ></p>
+
+        <ul id="allow-list" class="mt-4 space-y-1.5"></ul>
+
+        <p
+          id="allow-empty"
+          class="mt-4 text-sm text-zinc-400 dark:text-zinc-500"
+        >
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>
