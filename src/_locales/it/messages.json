@@ -1,18 +1,15 @@
 {
   "name": {
-    "message": "LinkDuck - pulisci link YouTube e reindirizzamenti"
+    "message": "Pulisci i link di YouTube e le reindirizzamenti"
   },
   "description": {
-    "message": "Rimuove i reindirizzamenti di YouTube e i link sponsorizzati per mostrare la destinazione reale senza tracker URL."
-  },
-  "settings_title": {
-    "message": "Impostazioni"
+    "message": "LinkDuck: rimuove i reindirizzamenti di YouTube per raggiungere la destinazione reale senza tracker."
   },
   "allowlist_title": {
     "message": "Lista consentiti"
   },
   "allowlist_desc": {
-    "message": "I link a questi domini rimangono invariati. È utile per i siti che richiedono i propri parametri, come alcune reti pubblicitarie. I sottodomini sono inclusi, quindi $1 include anche $2."
+    "message": "I link a questi domini rimangono invariati. È utile per i siti che richiedono i propri parametri per funzionare. Sono inclusi anche i sottodomini, quindi $1 copre anche $2."
   },
   "allowlist_remove": {
     "message": "Rimuovi"

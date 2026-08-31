@@ -1,18 +1,15 @@
 {
   "name": {
-    "message": "LinkDuck – YouTube-Links und Weiterleitungen bereinigen"
+    "message": "YouTube links bereinigen und Weiterleitungen auflösen"
   },
   "description": {
-    "message": "Entfernt YouTube-Weiterleitungen und gesponserte Links und zeigt das echte Ziel ohne URL-Tracker."
-  },
-  "settings_title": {
-    "message": "Einstellungen"
+    "message": "LinkDuck – löst YouTube-Weiterleitungslinks auf und führt direkt zum eigentlichen Ziel weiter, ohne Tracker."
   },
   "allowlist_title": {
     "message": "Erlaubte Domains"
   },
   "allowlist_desc": {
-    "message": "Links zu diesen Domains bleiben unverändert. Dies ist nützlich für Websites, die ihre Parameter benötigen, z. B. einige Werbenetzwerke. Subdomains sind eingeschlossen, sodass $1 auch $2 abdeckt."
+    "message": "Links zu diesen Domains bleiben unverändert. Dies ist nützlich für Websites, die ihre Parameter benötigen. Subdomains sind eingeschlossen, daher deckt $1 auch $2 ab."
   },
   "allowlist_remove": {
     "message": "Entfernen"

@@ -1,18 +1,15 @@
 {
   "name": {
-    "message": "LinkDuck - nettoie les liens YouTube et les redirections"
+    "message": "Nettoyer les liens YouTube et les redirections"
   },
   "description": {
-    "message": "Supprime les redirections YouTube et les liens sponsorisés pour afficher la vraie destination sans traceurs d’URL."
-  },
-  "settings_title": {
-    "message": "Paramètres"
+    "message": "LinkDuck : supprime les redirections YouTube pour accéder à la destination réelle sans traqueurs."
   },
   "allowlist_title": {
     "message": "Liste d’autorisation"
   },
   "allowlist_desc": {
-    "message": "Les liens vers ces domaines restent inchangés. C’est utile pour les sites qui ont besoin de leurs paramètres, comme certains réseaux publicitaires. Les sous-domaines sont inclus, donc $1 couvre aussi $2."
+    "message": "Les liens vers ces domaines restent inchangés. Cela est utile pour les sites qui ont besoin de leurs paramètres pour fonctionner. Les sous-domaines sont inclus, donc $1 couvre également $2."
   },
   "allowlist_remove": {
     "message": "Supprimer"

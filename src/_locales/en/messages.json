@@ -1,18 +1,15 @@
 {
   "name": {
-    "message": "LinkDuck - clean YouTube links & redirects"
+    "message": "Clean YouTube links and redirects"
   },
   "description": {
-    "message": "Unwraps YouTube redirect and sponsored links to the real destination without URL trackers."
-  },
-  "settings_title": {
-    "message": "settings"
+    "message": "LinkDuck - unwraps YouTube redirect links to the real destination without trackers."
   },
   "allowlist_title": {
     "message": "Allow list"
   },
   "allowlist_desc": {
-    "message": "Links to these domains stay unchanged. This is useful for sites that need their parameters to work, like some ad networks. Subdomains are included, so $1 also covers $2."
+    "message": "Links to these domains stay unchanged. This is useful for sites that need their parameters to work. Subdomains are included, so $1 also covers $2."
   },
   "allowlist_remove": {
     "message": "Remove"
