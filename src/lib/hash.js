@@ -1,15 +1,3 @@
-// Campaign parameters sometimes ride in the fragment instead of the query,
-// as in `https://site.com/#products?utm_source=Google&utm_medium=cpc`.
-//
-// The AdGuard rules deliberately do not cover this: `$removeparam` is defined
-// over the query string, and a fragment never reaches the server. It is worth
-// removing anyway, because the page's own scripts can read `location.hash` and
-// forward it to analytics.
-//
-// Kept separate from `matcher.clean` and deliberately narrow. The fragment is
-// how single-page apps route, so anything not clearly a campaign parameter is
-// left alone — in the example above `#products` is the route.
-
 const TRACKING = /^utm_/i;
 
 /**

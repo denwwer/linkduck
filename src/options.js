@@ -8,11 +8,10 @@ const empty = document.getElementById('allow-empty');
 
 // localize text
 const labels = [
-  document.getElementById('settings-title'),
   document.getElementById('allowlist-title'),
   document.getElementById('allowlist-desc'),
   empty,
-]
+];
 
 function fail(message) {
   error.textContent = message;
@@ -64,7 +63,6 @@ form.addEventListener('submit', async (event) => {
 input.addEventListener('input', () => fail(''));
 
 // Another window may be editing the same list.
-// eslint-disable-next-line no-undef
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'sync' && changes.allowlist) {
     render(changes.allowlist.newValue ?? []);
@@ -78,9 +76,10 @@ async function locale() {
     const key = label.id.replace(/-/g, '_');
 
     if (label.id === 'allowlist-desc') {
-      label.innerHTML = chrome.i18n.getMessage(key,
-        [`<code class="rounded bg-zinc-100 px-1 dark:bg-zinc-700">example.com</code>`,
-        `<code class="rounded bg-zinc-100 px-1 dark:bg-zinc-700">any.example.com</code>`]);
+      label.innerHTML = chrome.i18n.getMessage(key, [
+        `<code class="rounded bg-zinc-100 px-1 dark:bg-zinc-700">example.com</code>`,
+        `<code class="rounded bg-zinc-100 px-1 dark:bg-zinc-700">any.example.com</code>`,
+      ]);
     } else {
       label.textContent = chrome.i18n.getMessage(key);
     }
@@ -90,4 +89,3 @@ async function locale() {
 // Load
 locale();
 read().then(render);
-

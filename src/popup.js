@@ -4,8 +4,8 @@ import { read } from './lib/stats.js';
 const labels = [
   document.getElementById('tracker-title'),
   document.getElementById('tracker-24h'),
-  document.getElementById('tracker-all')
-]
+  document.getElementById('tracker-all'),
+];
 
 const compact = new Intl.NumberFormat(undefined, {
   notation: 'compact',
@@ -37,7 +37,6 @@ async function locale() {
 }
 
 // Track stats updates when popup is open
-// eslint-disable-next-line no-undef
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'local' && changes.stats) {
     render();
@@ -45,10 +44,9 @@ chrome.storage.onChanged.addListener((changes, area) => {
 });
 
 document.getElementById('settings').addEventListener('click', () => {
-  // eslint-disable-next-line no-undef
   chrome.runtime.openOptionsPage();
 });
 
 // Load
-locale()
+locale();
 render();

@@ -1,13 +1,3 @@
-// Runtime side of the AdGuard TrackParam filter: applies the index built by
-// scripts/rules.js to a URL and returns it without the tracking parameters.
-//
-// Only `$removeparam` semantics are implemented. Rules needing request context
-// we do not have (content types, `$third-party`, `$app`) are dropped at build
-// time, so everything reaching here can be decided from the URL alone.
-//
-// The index arrives already compiled — Sets and regexp literals — so there is
-// no setup step to pay for beyond evaluating the generated module.
-
 export function createMatcher({ block, allow }) {
   return { clean };
 

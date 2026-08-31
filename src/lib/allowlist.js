@@ -5,7 +5,6 @@ const KEY = 'allowlist';
  * @return {Promise<*|*[]>}
  */
 export async function read() {
-  // eslint-disable-next-line no-undef
   const stored = await chrome.storage.sync.get(KEY);
 
   return Array.isArray(stored[KEY]) ? stored[KEY] : [];
@@ -27,7 +26,6 @@ export async function add(value) {
 
   const next = [...current, domain].sort();
 
-  // eslint-disable-next-line no-undef
   await chrome.storage.sync.set({ [KEY]: next });
 
   return next;
@@ -41,7 +39,6 @@ export async function add(value) {
 export async function remove(domain) {
   const next = (await read()).filter((entry) => entry !== domain);
 
-  // eslint-disable-next-line no-undef
   await chrome.storage.sync.set({ [KEY]: next });
 
   return next;

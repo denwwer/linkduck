@@ -5,10 +5,10 @@
   "type": "module",
   "main": "src/popup.js",
   "scripts": {
-    "rules": "node scripts/rules.js",
     "build": "vite build --mode content && vite build --mode options && vite build",
     "lint": "eslint . --fix",
     "format": "prettier . --write",
+    "rules": "node scripts/rules.js",
     "test": "vitest run"
   },
   "devDependencies": {

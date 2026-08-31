@@ -3,7 +3,7 @@ import { createMatcher } from '../lib/matcher.js';
 import { counted } from '../lib/stats.js';
 import { has, read as readAllowlist } from '../lib/allowlist.js';
 import { cleanHash } from '../lib/hash.js';
-import {decodeUriRedirect} from "./util.js";
+import { decodeUriRedirect } from './util.js';
 
 const YOUTUBE_REDIRECT_URL = 'https://www.youtube.com/redirect';
 const GOOGLE_AD_URL = 'https://www.googleadservices.com/';
@@ -22,7 +22,6 @@ readAllowlist().then((domains) => {
   allowlist = domains;
 });
 
-// eslint-disable-next-line no-undef
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === 'sync' && changes.allowlist) {
     allowlist = changes.allowlist.newValue ?? [];
@@ -108,3 +107,7 @@ for (const type of TRIGGERS) {
 }
 
 document.addEventListener('click', onClick, true);
+
+chrome.runtime.sendMessage({ type: 'active' }).catch(() => {
+  // used def icon
+});

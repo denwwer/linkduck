@@ -12,15 +12,23 @@
   >
     <main class="mx-auto max-w-xl px-6 py-10">
       <div class="flex items-center gap-2">
-        <span class="size-2.5 rounded-full bg-brand"></span>
-        <h1 class="text-base font-semibold tracking-tight">LinkDuck <span id="settings-title"></span></h1>
+        <img src="icon128.png" alt="" width="18" height="18" class="size-5" />
+        <h1 class="text-base font-semibold tracking-tight">
+          Link<span class="text-brand">Duck</span>
+        </h1>
       </div>
 
       <section
         class="mt-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-zinc-800"
       >
-        <h2 id="allowlist-title" class="text-sm font-semibold tracking-tight"></h2>
-        <p id="allowlist-desc" class="mt-1 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 min-h-16"></p>
+        <h2
+          id="allowlist-title"
+          class="text-sm font-semibold tracking-tight"
+        ></h2>
+        <p
+          id="allowlist-desc"
+          class="mt-1 text-sm leading-relaxed text-zinc-700 dark:text-zinc-400 min-h-16"
+        ></p>
 
         <form id="allow-form" class="mt-4 flex gap-2">
           <input
@@ -30,7 +38,7 @@
             autocomplete="off"
             placeholder="example.com"
             aria-label="Domain to leave alone"
-            class="min-w-0 flex-1 rounded-lg border border-zinc-200 px-3 py-2 text-sm outline-none placeholder:text-zinc-400 focus:border-brand dark:border-zinc-600 dark:bg-zinc-900 dark:placeholder:text-zinc-500"
+            class="min-w-0 flex-1 rounded-lg border border-zinc-200 px-3 py-2 text-sm outline-none placeholder:text-zinc-400 focus:border-brand dark:border-zinc-600 dark:bg-zinc-900 dark:placeholder:text-zinc-700"
           />
           <button
             type="submit"
@@ -49,9 +57,8 @@
 
         <p
           id="allow-empty"
-          class="mt-4 text-sm text-zinc-400 dark:text-zinc-500"
-        >
-        </p>
+          class="mt-4 text-sm text-zinc-400 dark:text-zinc-700"
+        ></p>
       </section>
     </main>
 

@@ -4,15 +4,17 @@
   "version": "1.0",
   "description": "__MSG_description__",
   "default_locale": "en",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "icon16-off.png",
+      "48": "icon48-off.png",
+      "128": "icon128-off.png"
     }
   },
   "icons": {
@@ -22,12 +24,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.youtube.com/*"
-      ],
-      "js": [
-        "content.js"
-      ]
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
     }
   ],
   "options_ui": {

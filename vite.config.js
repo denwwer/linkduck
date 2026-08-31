@@ -68,7 +68,7 @@ function popup() {
       emptyOutDir: false,
       rollupOptions: {
         input: {
-          // background: resolve(__dirname, 'src/background.ts'),
+          background: resolve(__dirname, 'src/background.js'),
           popup: resolve(__dirname, 'src/popup.html'),
         },
         output: {

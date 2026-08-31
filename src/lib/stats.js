@@ -10,7 +10,6 @@ let flush = null;
  * Check if content.js can reach extension.
  */
 function connected() {
-  // eslint-disable-next-line no-undef
   return Boolean(chrome.runtime?.id);
 }
 
@@ -47,7 +46,6 @@ async function record(count = 1) {
     total: current.total + count,
   };
 
-  // eslint-disable-next-line no-undef
   await chrome.storage.local.set({ [KEY]: next });
 
   return next;
@@ -58,14 +56,13 @@ async function record(count = 1) {
  * @return {Promise<*|{day: string, today: number, total}>}
  */
 export async function read() {
-  // eslint-disable-next-line no-undef
   const stored = await chrome.storage.local.get(KEY);
 
   return rollOver(stored[KEY]);
 }
 
 /**
- * Store 24H and total cleaned links metrics.
+ * Store 24h and total cleaned links metrics.
  * @param stats
  * @return {*|{day: string, today: number, total}}
  */

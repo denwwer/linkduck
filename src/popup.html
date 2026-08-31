@@ -11,8 +11,14 @@
   >
     <div class="p-5">
       <div class="flex items-center gap-2">
-        <span class="size-2.5 rounded-full bg-brand"></span>
-        <h1 id="tracker-title" class="text-sm font-semibold tracking-tight"></h1>
+        <!-- prettier-ignore -->
+        <svg width="16px" height="16px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+          <path class="fill-brand" d="M4.35009 13.3929L8 16L11.6499 13.3929C13.7523 11.8912 15 9.46667 15 6.88306V3L8 0L1 3V6.88306C1 9.46667 2.24773 11.8912 4.35009 13.3929Z"></path> </g>
+        </svg>
+        <h1
+          id="tracker-title"
+          class="text-sm font-semibold tracking-tight -ml-1"
+        ></h1>
 
         <button
           id="settings"
@@ -47,14 +53,20 @@
           >
             &mdash;
           </div>
-          <div id="tracker-24h" class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"></div>
+          <div
+            id="tracker-24h"
+            class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"
+          ></div>
         </div>
 
         <div class="rounded-xl border border-zinc-200 p-3 dark:border-zinc-700">
           <div id="total" class="text-2xl font-semibold tabular-nums">
             &mdash;
           </div>
-          <div id="tracker-all" class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"></div>
+          <div
+            id="tracker-all"
+            class="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400"
+          ></div>
         </div>
       </div>
     </div>

@@ -1,17 +1,7 @@
-// Google's `ai` click parameter is base64url-encoded protobuf. Most of it is
-// opaque — the first field declares a length past the end of the buffer, so the
-// message cannot be walked field by field — but the destination is stored as an
-// ordinary length-delimited string field.
-//
-// That length prefix is what makes this reliable: find `http`, read the varint
-// immediately before it, and keep exactly that many bytes. Scanning for
-// URL-shaped text instead would both truncate (a byte outside the character
-// class ends the match early) and over-capture (following binary that happens
-// to be printable gets glued on).
-
 const PROTOCOL = /^https?:\/\//;
 
 /**
+ * Google's `ai` click parameter is base64url-encoded protobuf.
  * @param {string} value Raw `ai` parameter.
  * @returns {string|null} Destination URL, or null when none is recognisable.
  */
