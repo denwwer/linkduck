@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LinkDuck</title>
+    <style>
+      :root {
+        --accent: #0077b6;
+        --accent-lift: #3aa9e0;
+        --dirty: #f0808a;
+        --clean: #5ddba0;
+        --text: #f5f5f5;
+        --text-dim: #a8a2a6;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #0d0d10;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 40px 0;
+      }
+
+      .slide {
+        position: relative;
+        width: 1280px;
+        height: 800px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 72px;
+        padding: 0 96px;
+        background: linear-gradient(
+          135deg,
+          #15161a 0%,
+          #10283a 55%,
+          #044f7a 100%
+        );
+      }
+
+      .slide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 72% 45%,
+          rgba(255, 255, 255, 0.09),
+          transparent 58%
+        );
+        pointer-events: none;
+      }
+
+      .copy {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        max-width: 520px;
+      }
+
+      .eyebrow img {
+        width: 28px;
+        height: 28px;
+      }
+
+      h1 {
+        font-size: 58px;
+        line-height: 1.08;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        margin-bottom: 22px;
+      }
+
+      h1 em {
+        font-style: normal;
+        color: var(--accent-lift);
+      }
+
+      p {
+        font-size: 24px;
+        line-height: 1.5;
+        color: var(--text-dim);
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 60px;
+      }
+
+      .tag {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        padding: 8px 16px;
+      }
+
+      .shot {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 auto;
+      }
+
+      .shot img {
+        display: block;
+        width: 480px;
+        border-radius: 5px;
+        box-shadow:
+          0 30px 60px rgba(0, 0, 0, 0.55),
+          0 2px 0 rgba(255, 255, 255, 0.08) inset;
+      }
+
+      /* Slides without a popup capture show the URL transform itself — that is
+         the product. Rendered in CSS so the file needs no extra images. */
+      .urls {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 auto;
+        width: 480px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .url {
+        background: rgba(10, 10, 14, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 20px 22px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      .url-tag {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .url code {
+        display: block;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 17px;
+        line-height: 1.55;
+        word-break: break-all;
+        color: var(--text-dim);
+      }
+
+      .url.before .url-tag {
+        color: var(--dirty);
+      }
+
+      .url.before .junk {
+        color: var(--dirty);
+        opacity: 0.85;
+      }
+
+      .url.after {
+        border-color: rgba(93, 219, 160, 0.35);
+      }
+
+      .url.after .url-tag {
+        color: var(--clean);
+      }
+
+      .url.after code {
+        color: var(--text);
+        font-size: 21px;
+      }
+
+      .arrow {
+        align-self: center;
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .facts {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 auto;
+        width: 480px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .fact {
+        background: rgba(10, 10, 14, 0.72);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        padding: 22px 24px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      .fact b {
+        display: block;
+        font-size: 21px;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+
+      .fact span {
+        font-size: 17px;
+        line-height: 1.45;
+        color: var(--text-dim);
+      }
+
+      .promo {
+        position: relative;
+        width: 440px;
+        height: 280px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 0 10px;
+        background: linear-gradient(
+          135deg,
+          #15161a 0%,
+          #10283a 55%,
+          #044f7a 100%
+        );
+      }
+
+      .promo::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 78% 40%,
+          rgba(255, 255, 255, 0.09),
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+
+      .promo .copy-sm {
+        margin-left: 10px;
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .promo .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .promo .brand img {
+        width: 26px;
+        height: 26px;
+      }
+
+      .promo .wordmark {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        color: var(--text);
+      }
+
+      .promo .wordmark em {
+        font-style: normal;
+        color: var(--accent);
+      }
+
+      .promo .sub {
+        margin-top: 7px;
+        font-size: 12px;
+        line-height: 1.3;
+        color: var(--text-dim);
+      }
+
+      .promo ul {
+        list-style: none;
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .promo li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        /*font-weight: 600;*/
+        color: var(--text);
+      }
+
+      .promo li::before {
+        content: '';
+        flex: 0 0 auto;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .promo .shot {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 auto;
+      }
+
+      .promo .shot img {
+        width: 200px;
+        height: auto;
+        border-radius: 5px;
+        box-shadow:
+          0 12px 28px rgba(0, 0, 0, 0.5),
+          0 2px 0 rgba(255, 255, 255, 0.08) inset;
+      }
+
+      .label {
+        color: #666;
+        font-size: 13px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="label">slide-1.png — 1280×800</span>
+    <section class="slide" id="slide-1">
+      <div class="copy">
+        <h1>YouTube links, <em>unwrapped</em>.</h1>
+        <p>
+          Skip the redirect, drop the tracking parameters, land on the real
+          destination.
+        </p>
+        <div class="tags">
+          <span class="tag">No redirect hop</span>
+          <span class="tag">100% offline</span>
+          <span class="tag">Open source</span>
+        </div>
+      </div>
+      <div class="shot">
+        <img
+          src="screenshots/s-1.png"
+          alt="LinkDuck popup counting cleaned links"
+        />
+      </div>
+    </section>
+
+    <span class="label">slide-2.png — 1280×800</span>
+    <section class="slide" id="slide-2">
+      <div class="copy">
+        <h1>The redirect <em>never</em> fires.</h1>
+        <p>
+          Links in descriptions and comments go straight out. Your click is not
+          reported on the way.
+        </p>
+        <div class="tags"></div>
+      </div>
+      <div class="urls">
+        <div class="url before">
+          <span class="url-tag">What YouTube gives you</span>
+          <code
+            >youtube.com/redirect<span class="junk"
+              >?event=video_description&amp;redir_token=QUFF…</span
+            >&amp;q=https%3A%2F%2Fshop.example%2Fdeal<span class="junk"
+              >%3Futm_source%3Dyoutube</span
+            ></code
+          >
+        </div>
+        <span class="arrow">↓</span>
+        <div class="url after">
+          <span class="url-tag">Where you actually go</span>
+          <code>shop.example/deal</code>
+        </div>
+      </div>
+    </section>
+
+    <span class="label">promo-small.png — 440×280</span>
+    <section class="promo" id="promo-small">
+      <div class="copy-sm">
+        <div class="brand">
+          <img src="logo.png" alt="" />
+          <span class="wordmark">Link<em>Duck</em></span>
+        </div>
+        <ul>
+          <li>No YouTube redirect hop</li>
+          <li>No tracking parameters</li>
+        </ul>
+      </div>
+      <div class="shot">
+        <img src="screenshots/s-1.png" alt="popup" />
+      </div>
+    </section>
+
+    <!--
+      Export:
+        1. Open this file in Chrome (file:// is fine, images are local).
+        2. Screenshot each <section class="slide"> element at 1x — DevTools
+           "Capture node screenshot" on the element gives an exact 1280x800 (or 440x280 for #promo-small) PNG.
+    -->
+  </body>
+</html>
