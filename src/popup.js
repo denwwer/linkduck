@@ -36,13 +36,6 @@ async function locale() {
   }
 }
 
-// Track stats updates when popup is open
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === 'local' && changes.stats) {
-    render();
-  }
-});
-
 document.getElementById('settings').addEventListener('click', () => {
   chrome.runtime.openOptionsPage();
 });
